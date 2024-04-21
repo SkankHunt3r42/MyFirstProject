@@ -15,13 +15,15 @@ public class AppRunner {
         if (Aunteficator.auth()) {
             client cli  = clientService.registerNewClient();
 
-            if(cli != null) {
+            if( cli != null && cli.isUserDataValid() && clientService.confirmation()) {
                 System.out.println("Adding a new pet.");
 
                 Pet pet = petService.registerNewPet();
                 cli.setPet(pet);
                 pet.setOwner(cli.getFristName() + " " + cli.getLastName());
                 System.out.println("Pet has been added. ");
+            } else {
+                System.out.println("Shut downing ");
             }
         }
     }

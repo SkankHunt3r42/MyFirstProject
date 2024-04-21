@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 public class ClientService {
 
     private static  String  EMAIL_PATERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+    public static final String REGEX = "[a-zA-Z-']{3,}";
 
     public client registerNewClient() {
         client cli = null;
@@ -18,9 +19,13 @@ public class ClientService {
 
         if (isEmailValid(email)) {
             cli = buidClient(email);
-            System.out.println("New client: " + cli.getFristName() + " " +
-                    cli.getLastName()+ " " +
-                    "(" + cli.getEmail() + ")");
+            if(cli.isUserDataValid()) {
+                System.out.println("New client: " + cli.getFristName() + " " +
+                        cli.getLastName() + " " +
+                        "(" + cli.getEmail() + ")");
+            } else {
+                System.out.println("User data is invalid,check your input data.");
+            }
         } else {
             System.out.println("Provided email is invalid.");
         }
@@ -46,6 +51,15 @@ public class ClientService {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
 
+    }
+    public boolean confirmation () {
+        boolean confirmed = false;
+        System.out.print("Do you want to add pet now? - (yes/no): ");
+        String confirm = Main.scanner.nextLine();
+        if(confirm.equals("yes")) {
+            confirmed = true;
+        }
+        return confirmed;
     }
 
 }
