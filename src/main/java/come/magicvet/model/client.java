@@ -1,10 +1,15 @@
 package main.java.come.magicvet.model;
 
+import main.java.come.magicvet.service.ClientService;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class client {
 
-    private String fristName;
+    private static String fristName;
 
-    private String lastName;
+    private static String lastName;
     private String email;
     private Pet pet;
 
@@ -38,4 +43,12 @@ public class client {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+    public  boolean isUserDataValid() {
+        Pattern pattern = Pattern.compile(ClientService.REGEX);
+        Matcher matcher = pattern.matcher(fristName);
+        Matcher matcher1 = pattern.matcher(lastName);
+
+        return matcher.matches() && matcher1.matches();
+    }
+
 }
