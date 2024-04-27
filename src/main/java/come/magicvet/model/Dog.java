@@ -1,5 +1,6 @@
 package main.java.come.magicvet.model;
 
+
 public class Dog extends  Pet{
 
     private  String size;
