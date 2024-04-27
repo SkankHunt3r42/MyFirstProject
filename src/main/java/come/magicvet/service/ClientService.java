@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class ClientService {
 
-    private static  String  EMAIL_PATERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+    private static  final String  EMAIL_PATERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     public static final String REGEX = "[a-zA-Z-']{3,}";
 
     public client registerNewClient() {
@@ -28,6 +28,7 @@ public class ClientService {
             }
         } else {
             System.out.println("Provided email is invalid.");
+            return registerNewClient();
         }
         return cli;
     }

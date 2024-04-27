@@ -6,7 +6,7 @@ import main.java.come.magicvet.model.Pet;
 
 public class PetService {
 
-    private  static  String DOG_TYPE = "dog";
+    private  static final String DOG_TYPE = "dog";
 
     public Pet registerNewPet() {
         Pet pet = new Pet();
@@ -38,7 +38,8 @@ public class PetService {
         Dog dog = new Dog();
         dog.setAge(pet.getAge());
         dog.setName(pet.getName());
-        dog.setSize(pet.getSex());
+        dog.setType(pet.getType());
+        dog.setSex(pet.getSex());
         return dog;
     }
 
