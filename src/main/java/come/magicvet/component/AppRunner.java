@@ -19,10 +19,12 @@ public class AppRunner {
                 System.out.println("Adding a new pet.");
 
                 Pet pet = petService.registerNewPet();
-                cli.setPet(pet);
-                pet.setOwner(cli.getFristName() + " " + cli.getLastName());
-                System.out.println("Pet has been added. ");
-                System.out.println(cli);
+                if(pet != null) {
+                    cli.setPet(pet);
+                    pet.setOwner(cli.getFristName() + " " + cli.getLastName());
+                    System.out.println("Pet has been added. ");
+                }
+                    System.out.println(cli);
             } else {
                 System.out.println("Shut downing ");
             }
