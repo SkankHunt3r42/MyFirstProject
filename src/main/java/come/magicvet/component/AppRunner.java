@@ -1,7 +1,7 @@
 package main.java.come.magicvet.component;
 
 import main.java.come.magicvet.model.Pet;
-import main.java.come.magicvet.model.client;
+import main.java.come.magicvet.model.Client;
 import main.java.come.magicvet.service.ClientService;
 import main.java.come.magicvet.service.PetService;
 
@@ -13,7 +13,7 @@ public class AppRunner {
 
     public void  run() {
         if (Aunteficator.auth()) {
-            client cli  = clientService.registerNewClient();
+            Client cli  = clientService.registerNewClient();
 
             if( cli != null && cli.isUserDataValid() && clientService.confirmation()) {
                 System.out.println("Adding a new pet.");

@@ -3,7 +3,6 @@ package main.java.come.magicvet.model;
 import java.util.Objects;
 
 public abstract class Pet {
-
     private String Type;
     private String sex;
     private String age;
@@ -18,7 +17,7 @@ public abstract class Pet {
                 + "\n\tSex - " + sex
                 +"\n\tAge - " + age
                 +"\n\tName - " + name
-                +"\n\towner - " + owner
+                +"\n\tOwner - " + owner
                 +"\n\t}";
     }
 

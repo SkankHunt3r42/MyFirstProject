@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class client {
+public class Client {
 
 
     @Override
@@ -25,7 +25,7 @@ public class client {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        client client = (client) o;
+        Client client = (Client) o;
         return Objects.equals(fristName, client.fristName)
                 && Objects.equals(lastName, client.lastName)
                 && Objects.equals(email, client.email)
