@@ -75,4 +75,24 @@ public abstract class Pet {
         this.owner = owner;
     }
 
+
+    public enum HeathStatus{
+
+        GOOD(0),
+        NORMAL(1),
+        BAD(2),
+        CRITICAL(3)
+        ;
+        private final int priority;
+
+        HeathStatus(int priority) {
+            this.priority = priority;
+        }
+
+        public int getPriority() {
+            return priority;
+        }
+
+    }
+
 }
