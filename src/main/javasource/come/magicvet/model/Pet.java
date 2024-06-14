@@ -1,8 +1,5 @@
-package main.java.come.magicvet.model;
+package main.javasource.come.magicvet.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public abstract class Pet {

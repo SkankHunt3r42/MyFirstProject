@@ -1,7 +1,7 @@
 package come.magicvet.service;
 
-import main.java.come.magicvet.Main;
-import main.java.come.magicvet.model.Client;
+import main.javasource.come.magicvet.Main;
+import main.javasource.come.magicvet.model.Client;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,9 +1,9 @@
-package main.java.come.magicvet.service;
+package main.javasource.come.magicvet.service;
 
-import main.java.come.magicvet.Main;
-import main.java.come.magicvet.model.Cat;
-import main.java.come.magicvet.model.Dog;
-import main.java.come.magicvet.model.Pet;
+import main.javasource.come.magicvet.Main;
+import main.javasource.come.magicvet.model.Cat;
+import main.javasource.come.magicvet.model.Dog;
+import main.javasource.come.magicvet.model.Pet;
 
 public class PetService {
 

@@ -1,4 +1,4 @@
-package main.java.come.magicvet.model;
+package main.javasource.come.magicvet.model;
 
 import come.magicvet.service.ClientService;
 

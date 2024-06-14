@@ -1,6 +1,6 @@
-package main.java.come.magicvet.component;
+package main.javasource.come.magicvet.component;
 
-import main.java.come.magicvet.Main;
+import main.javasource.come.magicvet.Main;
 
 public class Aunteficator {
 
