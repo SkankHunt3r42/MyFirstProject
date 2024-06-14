@@ -20,7 +20,7 @@ public class PetService {
         if(DOG_TYPE.equals(type) || CAT_TYPE.equals(type)) {
             pet = buildPet(type);
         } else {
-            System.out.println("Unknown pet type - " + type);;
+            System.out.println("Unknown pet type - " + type);
         }
         return pet;
     }
@@ -39,14 +39,11 @@ public class PetService {
         System.out.println("Sex (male / female): ");
         pet.setSex(Main.scanner.nextLine());
 
-
-            if (type.equals(DOG_TYPE)) {
-                System.out.println("Size(XS / S / M / L / XL): ");
-                String size = Main.scanner.nextLine().toUpperCase();
-                ((Dog) pet).setSize(Dog.Size.valueOf(size));
-            }
-
-
+        if (type.equals(DOG_TYPE)) {
+            System.out.println("Size(XS / S / M / L / XL): ");
+            String size = Main.scanner.nextLine().toUpperCase();
+            ((Dog) pet).setSize(Dog.Size.valueOf(size));
+        }
         return pet;
     }
 }
