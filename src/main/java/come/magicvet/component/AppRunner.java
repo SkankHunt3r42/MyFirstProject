@@ -3,7 +3,7 @@ package main.java.come.magicvet.component;
 import main.java.come.magicvet.Main;
 import main.java.come.magicvet.model.Pet;
 import main.java.come.magicvet.model.Client;
-import come.magicvet.service.ClientService;
+import main.java.come.magicvet.service.ClientService;
 import main.java.come.magicvet.service.PetService;
 public class AppRunner {
 
