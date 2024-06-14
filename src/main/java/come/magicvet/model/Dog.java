@@ -3,26 +3,44 @@ package main.java.come.magicvet.model;
 
 public class Dog extends  Pet{
 
-    public static final String XS = "XS";
-    public static final String S = "S";
-    public static final String M = "M";
-    public static final String L  = "L";
-    public static final String XL = "XL";
+    private Size size;
 
-    private  String size;
+    private HeathStatus heathStatus;
 
     public Dog(){}
 
-    public Dog(String size,String age){
+    public Dog(Size size,String age,HeathStatus heathStatus){
         super.setAge(age);
         this.size = size;
+        this.heathStatus = heathStatus;
     }
 
-    public void setSize(String size) {
+    public void setSize(Size size) {
         this.size = size;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
+    }
+
+    public HeathStatus getHeathStatus() {return heathStatus;}
+
+    public enum Size{
+        XS(1),
+        S(2),
+        M(3),
+        L(4),
+        XL(5),
+        UNKNOWN(0)
+        ;
+
+        private final int value;
+
+        Size(int value) {
+            this.value = value;
+        }
+        public int getValue(){
+            return value;
+        }
     }
 }

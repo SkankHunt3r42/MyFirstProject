@@ -1,8 +1,12 @@
 package main.java.come.magicvet.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public abstract class Pet {
+
     private String Type;
     private String sex;
     private String age;
@@ -73,6 +77,26 @@ public abstract class Pet {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+
+    public enum HeathStatus{
+
+        GOOD(0),
+        NORMAL(1),
+        BAD(2),
+        CRITICAL(3)
+        ;
+        private final int priority;
+
+        HeathStatus(int priority) {
+            this.priority = priority;
+        }
+
+        public int getPriority() {
+            return priority;
+        }
+
     }
 
 }
