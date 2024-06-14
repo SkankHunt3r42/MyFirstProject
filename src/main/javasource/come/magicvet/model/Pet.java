@@ -95,5 +95,5 @@ public abstract class Pet {
         }
 
     }
-
 }
+
