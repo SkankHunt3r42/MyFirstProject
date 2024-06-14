@@ -1,4 +1,4 @@
-package main.java.come.magicvet.model;
+package come.magicvet.model;
 
 
 public class Dog extends  Pet{

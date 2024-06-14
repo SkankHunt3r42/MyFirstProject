@@ -1,9 +1,9 @@
-package main.java.come.magicvet.component;
+package come.magicvet.component;
 
-import main.java.come.magicvet.model.Pet;
-import main.java.come.magicvet.model.Client;
+import come.magicvet.model.Pet;
+import come.magicvet.model.Client;
 import come.magicvet.service.ClientService;
-import main.java.come.magicvet.service.PetService;
+import come.magicvet.service.PetService;
 public class AppRunner {
 
     private final ClientService clientService = new ClientService();

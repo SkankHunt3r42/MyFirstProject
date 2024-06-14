@@ -1,4 +1,4 @@
-package main.java.come.magicvet;
+package come.magicvet;
 
 public class SandBox {
     public static void main(String[] args) {
