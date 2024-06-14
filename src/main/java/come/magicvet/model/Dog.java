@@ -43,7 +43,5 @@ public class Dog extends  Pet{
             return value;
         }
     }
-
-
-
 }
+

@@ -1,8 +1,12 @@
 package main.java.come.magicvet.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public abstract class Pet {
+
     private String Type;
     private String sex;
     private String age;
@@ -94,5 +98,5 @@ public abstract class Pet {
         }
 
     }
-
 }
+
