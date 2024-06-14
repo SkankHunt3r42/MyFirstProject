@@ -1,9 +1,10 @@
-package come.magicvet.component;
+package main.java.come.magicvet.component;
 
-import come.magicvet.model.Pet;
-import come.magicvet.model.Client;
-import come.magicvet.service.ClientService;
-import come.magicvet.service.PetService;
+import main.java.come.magicvet.Main;
+import main.java.come.magicvet.model.Pet;
+import main.java.come.magicvet.model.Client;
+import main.java.come.magicvet.service.ClientService;
+import main.java.come.magicvet.service.PetService;
 public class AppRunner {
 
     private final ClientService clientService = new ClientService();
@@ -15,18 +16,37 @@ public class AppRunner {
             Client cli  = clientService.registerNewClient();
 
             if( cli != null && cli.isUserDataValid() && clientService.confirmation()) {
-                System.out.println("Adding a new pet.");
-
-                Pet pet = petService.registerNewPet();
-                if(pet != null) {
-                    cli.setPet(pet);
-                    pet.setOwner(cli.getFristName() + " " + cli.getLastName());
-                    System.out.println("Pet has been added. ");
-                }
+                    registerPets(cli);
                     System.out.println(cli);
             } else {
                 System.out.println("Shut downing ");
             }
+        }
+    }
+    private void registerPets(Client client){
+        boolean continued = true;
+
+        while (continued){
+            addPet(client);
+
+            System.out.print("Do you want to add more pets - (yes or no): ");
+            String accept = Main.scanner.nextLine();
+            if(accept.equals("no")){
+                continued = false;
+            }
+
+        }
+
+    }
+
+    private void addPet(Client client){
+        System.out.println("Adding a new pet.");
+
+        Pet pet = petService.registerNewPet();
+        if(pet != null) {
+            client.addPet(pet);
+            pet.setOwner(client.getFristName() + " " + client.getLastName());
+            System.out.println("Pet has been added. ");
         }
     }
 

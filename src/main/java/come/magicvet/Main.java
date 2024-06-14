@@ -1,6 +1,6 @@
-package come.magicvet;
+package main.java.come.magicvet;
 
-import come.magicvet.component.AppRunner;
+import main.java.come.magicvet.component.AppRunner;
 
 import java.util.Scanner;
 
