@@ -1,4 +1,4 @@
-package come.magicvet.model;
+package main.java.come.magicvet.model;
 
 import java.util.Objects;
 
