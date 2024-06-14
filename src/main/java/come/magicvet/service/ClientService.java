@@ -25,10 +25,11 @@ public class ClientService {
                         "(" + cli.getEmail() + ")");
             } else {
                 System.out.println("User data is invalid,check your input data.");
+                registerNewClient();
             }
         } else {
             System.out.println("Provided email is invalid.");
-            return registerNewClient();
+             registerNewClient();
         }
         return cli;
     }

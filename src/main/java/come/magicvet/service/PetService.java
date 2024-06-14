@@ -39,11 +39,12 @@ public class PetService {
         System.out.println("Sex (male / female): ");
         pet.setSex(Main.scanner.nextLine());
 
-        if(type.equals(DOG_TYPE)){
-            System.out.println("Size(XS / S / M / L / XL): ");
-            String size = Main.scanner.nextLine().toUpperCase();
-            ((Dog) pet).setSize(Dog.Size.valueOf(size));
-        }
+
+            if (type.equals(DOG_TYPE)) {
+                System.out.println("Size(XS / S / M / L / XL): ");
+                String size = Main.scanner.nextLine().toUpperCase();
+                ((Dog) pet).setSize(Dog.Size.valueOf(size));
+            }
 
 
         return pet;

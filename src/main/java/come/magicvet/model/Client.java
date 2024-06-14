@@ -4,6 +4,8 @@ import come.magicvet.service.ClientService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +20,7 @@ public class Client {
                 + "\n\tClient Name -  " + firstName
                 + "\n\tClient secondName - " + lastName
                 + "\n\tClient email - " + email
-                + "\u001B[31m \n\t\tClient Pet - " + pet
+                + "\u001B[31m \n\t\tClient Pet - " + petList
                 + "\u001B[0m"
                 +"\u001B[34m \n\tRegistration time - " + registerDate.format(FORMATTER)
                 + "\n]" + "\u001B[0m";
@@ -33,12 +35,12 @@ public class Client {
         return Objects.equals(firstName, client.firstName)
                 && Objects.equals(lastName, client.lastName)
                 && Objects.equals(email, client.email)
-                && Objects.equals(pet, client.pet);
+                && Objects.equals(petList, client.petList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, email, pet);
+        return Objects.hash(firstName, lastName, email, petList);
     }
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
@@ -47,7 +49,7 @@ public class Client {
 
     private static String lastName;
     private String email;
-    private Pet pet;
+    private List<Pet> petList = new ArrayList<>();
     private final LocalDateTime registerDate = LocalDateTime.now();
 
 
@@ -74,13 +76,14 @@ public class Client {
         return email;
     }
 
-    public Pet getPet() {
-        return pet;
+    public List<Pet> getPet() {
+        return petList;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPet(List<Pet> pet) {
+        this.petList = pet;
     }
+    public void addPets(Pet pet){petList.add(pet);}
     public  boolean isUserDataValid() {
         Pattern pattern = Pattern.compile(ClientService.REGEX);
         Matcher matcher = pattern.matcher(firstName);
