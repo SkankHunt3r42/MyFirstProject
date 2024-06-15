@@ -8,6 +8,17 @@ public class Dog extends  Pet{
     private HeathStatus heathStatus;
 
     public Dog(){}
+    @Override
+    public String toString() {
+        return "{"
+                +"\n\tType - " + getType()
+                + "\n\tSex - " + getSex()
+                +"\n\tAge - " + getAge()
+                +"\n\tName - " + getName()
+                +"\n\tSize - " + getSize()
+                +"\n\tOwner - " + getName()
+                +"\n\t}";
+    }
 
     public Dog(Size size,String age,HeathStatus heathStatus){
         super.setAge(age);
@@ -38,6 +49,15 @@ public class Dog extends  Pet{
 
         Size(int value) {
             this.value = value;
+        }
+        public static Size fromString(String value){
+            for(Size size1 : values()){
+                if(size1.toString().equals(value)){
+                    return size1;
+                }
+            }
+            System.out.println("Unable to parse data: " + value + " .Using default value " + UNKNOWN);
+            return UNKNOWN;
         }
         public int getValue(){
             return value;

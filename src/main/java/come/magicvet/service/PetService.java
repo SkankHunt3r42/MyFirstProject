@@ -45,7 +45,7 @@ public class PetService {
           
             String size = Main.scanner.nextLine().toUpperCase();
 
-            ((Dog) pet).setSize(Dog.Size.valueOf(size));
+            ((Dog) pet).setSize(Dog.Size.fromString(size));
         }
 
 
