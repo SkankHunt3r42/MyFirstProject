@@ -20,7 +20,7 @@ public class ClientService {
         if (isEmailValid(email)) {
             cli = buidClient(email);
             if(cli.isUserDataValid()) {
-                System.out.println("New client: " + cli.getFristName() + " " +
+                System.out.println("New client: " + cli.getFirstName() + " " +
                         cli.getLastName() + " " +
                         "(" + cli.getEmail() + ")");
             } else {
@@ -35,16 +35,20 @@ public class ClientService {
 
 
     private static Client buidClient(String email) {
-        Client cli = new Client();
-        cli.setEmail(email);
+        Client client = new Client();
+        client.setEmail(email);
 
         System.out.println("First name: ");
-        cli.setFristName(Main.scanner.nextLine());
+        client.setFirstName(Main.scanner.nextLine());
 
         System.out.println("Last name: ");
-        cli.setLastName(Main.scanner.nextLine());
+        client.setLastName(Main.scanner.nextLine());
 
-        return cli;
+        System.out.println("Location: ");
+        String location = Main.scanner.nextLine().toUpperCase();
+        client.setLocation(Client.Location.valueOf(location));
+
+        return client;
     }
 
     private static boolean isEmailValid(String email) {
