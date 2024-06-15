@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import main.java.come.magicvet.model.Pet;
 
 public class Client {
 
@@ -21,6 +20,7 @@ public class Client {
                 + "\n\tClient Name -  " + firstName
                 + "\n\tClient secondName - " + lastName
                 + "\n\tClient email - " + email
+                +"\n\tLocation - " + location
                 + "\u001B[31m \n\t\tClient Pet - " + pets
                 + "\u001B[0m"
                 +"\u001B[34m \n\tRegistration time - " + registerDate.format(FORMATTER)
@@ -52,13 +52,22 @@ public class Client {
     private String email;
     private List<Pet> pets = new ArrayList<>();
     private final LocalDateTime registerDate = LocalDateTime.now();
+    private Location location;
 
 
-    public void setFristName(String fristName) {
+    public void setFirstName(String fristName) {
         this.firstName = fristName;
     }
 
-    public String getFristName() {
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public String getFirstName() {
         return firstName;
     }
 
@@ -77,11 +86,11 @@ public class Client {
         return email;
     }
 
-    public List<Pet> getPet() {
+    public List<Pet> getPets() {
         return pets;
     }
 
-    public void setPet(List<Pet> pets) {
+    public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
     public  boolean isUserDataValid() {
@@ -91,7 +100,12 @@ public class Client {
 
         return matcher.matches() && matcher1.matches();
     }
+
     public void addPet(Pet pet){
         pets.add(pet);
+    }
+
+    public enum Location{
+        KYIV,LVIV,ODESSA
     }
 }
